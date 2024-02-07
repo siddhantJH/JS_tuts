@@ -11,9 +11,9 @@ console.log("02">1)
 
 
 console.log(null>0);
-console.log(null==0);       //equality null does'nt get converted to 0
-console.log(null>=0);   //not predictable result comparison and eauality operator are different 
-                        //comparison null get converted to 0
+console.log(null==0);    //equality null does'nt get converted to 0
+console.log(null>=0);   //not predictable result comparison and equality operator are different 
+                        //comparison(>=) null get converted to 0
 
 console.log(undefined ==0);
 console.log(undefined>0)
