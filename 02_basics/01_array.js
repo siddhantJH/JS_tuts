@@ -2,7 +2,7 @@
 
 // const myArray = [0,1,2,3,4,5,6] //uses sqyare brackstes and inside we have elments,
                                 // within single variable we have multiple variable 
-                                //dynamic can add new elements
+                                //it is dynamic can add new elements
                                 //when we want to access it we use [] square brackets index starts from 0
                                 //can't use string as index
                                 //In array when we use copy func it makes shallow copy , shares same reference point 

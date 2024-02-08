@@ -2,8 +2,8 @@
 //constructor(singleton banega)
 
 //Object literat ways 
-//stored as keys and values keys apne app me styring ki tarah hai
-//There is special data type called as symbol now lets declraed a symbol 
+//stored as keys and values keys apne app me string ki tarah hai
+//There is special data type called as symbol now lets declare a symbol 
 const mySym=Symbol("key 1") //declared a symbol , now if we want to use this symbol as the key we can't d it directly 
                             //we need to use something as this square bracket 
 const JsUser = {name:"Siddhant",age:18,location:"Jaipur",[mySym]:"mykey1",email:"rohan@gmail",isLoggedIn:false,lastLogin:["Mon","Tue"],"full name":"Siddhant Jha"}  
