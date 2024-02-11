@@ -19,4 +19,4 @@ const newNum=nyNumbers.map((num)=> num*10).map((num)=>num+1).filter((num)=>num<5
 console.log(newNum)
 
 //filter does true and false
-//map does operation 
+//map does operatiom
