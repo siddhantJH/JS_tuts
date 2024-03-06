@@ -14,4 +14,20 @@
         <li class="day">fri</li>
     </div>
 </body>
+<script>
+    //now once this is created we can put it in a function and call it create a new div element for us based ont he argument we pass
+    
+    const h1=document.createElement('h1')
+    const div=document.createElement('div')
+    console.log(div) //here we get a div element could have creaetd h1 as well 
+    console.log(h1) //here we get h1 element 
+    div.id = Math.round(Math.random()*10+1)//can add id in the element like this 
+    div.setAttribute("title","generated title")  //can add title in the elmeent like this , this is mostly preferred half rtt
+    div.style.backgroundColor="green" //can add color back like this 
+    div.style.padding="12px" //can add the padding  like this 
+    // div.innerText="chai and code"
+    const addText=document.createTextNode("Chai Aur Code")
+    div.appendChild(addText)
+    document.body.appendChild(div)
+</script>
 </html>
