@@ -29,4 +29,4 @@ console.log(document.links);
 // Use .innerHTML to assign HTML content within quotes.
 // Example: element.innerHTML = '<tag>Content</tag>';
 
-// Additional methods and properties can be accessed using the '.' operator on the document object.
+// Additional methods and properties can be accessed using the '.' operator on the document object..

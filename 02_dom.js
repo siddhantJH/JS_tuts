@@ -57,7 +57,7 @@ console.log(dayOne.parentElement); // Returns the parent element of dayOne
 console.log(dayOne.nextElementSibling); // Returns the next sibling element of dayOne
 
 console.log("Nodes:", parent.childNodes); 
-// It logs all the child nodes of parent, including text nodes, comments, etc.
+// It logs all the child nodes of parent, including text nodes, comments, etc..
 
 // A detailed explanation of Node concept:
 
