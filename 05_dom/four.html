@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black">
+<ul>
+    <li class="language" style="color:white">Javascript</li>
+</ul>
+</body>
+<script>
+    function addLanguage(langName)
+    {
+        const li=document.createElement('li')
+        li.innerHTML=`${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+    addLanguage("python")
+    addLanguage("typescript")
+
+
+    //optimized function 
+    function addOptLanguage(langName)
+    {
+        const li=document.createElement('li')
+        li.appendChild(document.createTextNode(`${langName}`))
+        document.querySelector('.language').appendChild(li)
+    }
+    addOptLanguage("java")
+
+
+
+    //how to edit the value usiogn nth child 
+    //nice approach but slower 
+    const secondLang=document.querySelector("li:nth-child(2)")
+    // secondLang.innerHTML="Mojo"
+    //inner element banane ke jagah aik naya element banate hai aur naya element add karde
+    const newli=document.createElement('li')
+    newli.textContent="golang"
+    secondLang.replaceWith(newli)
+
+
+    //replace first javascript with type script 
+    const firstLang=document.querySelector('li:first-child')
+    
+
+    //remove 
+    const lastLang=document.querySelector('li:last-child')
+    lastLang.remove()
+</script>
+<style>
+
+</style>
+</html>

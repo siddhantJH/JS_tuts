@@ -1,77 +1,91 @@
-// //querySelector
-// // Implementation: document.querySelector(selector) selects the first element that matches the specified CSS selector within the document.
-// // Return Type: It returns either the first matching Element node or null if no matches are found.
-// // Additional Details: This method is quite versatile as it accepts any valid CSS selector, allowing you to select elements based on their tag names, classes, IDs, attributes, etc.
+document.getElementById('')
+//it is a method and we pass a id 
+//we get a entire value along with the tag 
 
-// const parent = document.querySelector('.parent'); // Selects the first element with class 'parent'
 
-// //querySelectorAll
-// // Implementation: document.querySelectorAll(selector) selects all elements that match the specified CSS selector within the document and returns them as a static NodeList.
-// // Return Type: It returns a NodeList containing all matching Element nodes or an empty NodeList if no matches are found.
-// // Additional Details: The returned NodeList is static, meaning it won't automatically update if the DOM changes. It's useful for selecting multiple elements and iterating over them using methods like forEach.
+document.getElementById('title').class //causes error 
+document.getElementById('title').className //works correctly 
 
-// const dayOne = document.querySelector('.day'); // Selects the first element with class 'day'
 
-// //getElementByClassName
-// // Implementation: document.getElementsByClassName(className) returns a live HTMLCollection of elements that have the specified class name.
-// // Return Type: It returns an HTMLCollection containing all matching Element nodes or an empty HTMLCollection if no matches are found.
-// // Additional Details: Unlike querySelectorAll, this method only accepts a class name and doesn't support other CSS selectors. The HTMLCollection is live, meaning it updates automatically when the DOM changes.
+//to select an attribute of an element 
+//we can select any attribute using this strategy 
+document.getElementById('title').getAttribute('id')  //means we want the id attribute of the title id element 
 
-// const elementsByClassName = document.getElementsByClassName('example'); // Selects elements with class 'example'
 
-// //getElementById
-// // Implementation: document.getElementById(id) returns the element that has the specified ID.
-// // Return Type: It returns the matching Element node or null if no element with the specified ID is found.
-// // Additional Details: IDs must be unique within the document. This method is the fastest way to select an element by its ID.
-
-// const elementById = document.getElementById('example'); // Selects the element with id 'example'
+//How to set an attribute
+document.getElementById('title').setAttribute('class','test') 
+//first select an attribute 
+//then set the attribute
+//now if you observe it will overrite the previous one 
 
 
 
 
+//storing in a variable 
+const title=document.getElementById('title')
+//now we can use this title and we can insert various style elmeent 
+title.style.backgroundColor="red"
+title.style.padding="15px"
+title.style.borderRadius="10px"
 
-//querySelector
-//querySelectorAll
-//getElementByClassName
-//getElementById
 
-// These are methods to select elements from the DOM (Document Object Model).
 
-const parent = document.querySelector('.parent'); // Selects the first element with class 'parent'
-for (let i = 0; i < parent.children.length; i++) {
-    console.log(parent);
-    console.log(parent.children);
-    console.log(parent.children[i].innerHtml); // There's a typo here. It should be innerHTML (capital H).
-}
-// The loop above logs information about each child element of the parent.
+//how to get a content 
+title.innerHTML // gives everything the tags including the tags and spans
+title.innerText // gives only the visible text
+title.textContent // gives all the text including the context
 
-// Note: the following line is outside the loop, and 'i' is not defined here.
-// It will throw an error.
-parent.children[i].style.color = "orange";
 
-console.log(parent.firstElementChild); // Returns the first child element of parent
+//how to get element by class 
+document.getElementsByClassName('heading')
 
-const dayOne = document.querySelector('.day'); // Selects the first element with class 'day'
-console.log(dayOne);
-console.log(dayOne.parentElement); // Returns the parent element of dayOne
-console.log(dayOne.nextElementSibling); // Returns the next sibling element of dayOne
 
-console.log("Nodes:", parent.childNodes); 
-// It logs all the child nodes of parent, including text nodes, comments, etc..
+//query selector 
+document.querySelector('h1')  //gives us first h1 gives us entire tag along with attribute
+document.querySelector('.heading')
+document.querySelector('#title')
+document.querySelector('input[type="password"]')
 
-// A detailed explanation of Node concept:
 
-// In the DOM, every element, attribute, and piece of text in an HTML document is a node.
-// Nodes form a tree-like structure where the document itself is at the top (root) and
-// branches out to elements, which can have children (other elements or text nodes).
+//change color
+const ull=document.querySelector('ul')//gives us entire ul
+const lil=ull.querySelector('li') //select the li withing that ul
+lil.style.backgroundColor="green"
+lil.style.padding="10px"
+lil.innerText="hello" //can change the text content also 
 
-// Node Types:
-// 1. Element Nodes: Represent HTML elements.
-// 2. Text Nodes: Contain the actual text of the element.
-// 3. Comment Nodes: Represent comments in the HTML.
-// 4. Document Nodes: Represent the entire document.
-// 5. Document Type Nodes: Represent the document type declaration.
 
-// The NodeList returned by childNodes includes all types of nodes, not just elements.
-// If you want to work only with element nodes, you typically use properties like children
-// or methods like querySelectorAll to select elements directly without including text nodes.
+//query selector all returns us nodeList not exactly an 
+//array so foreach is given but map is not available 
+const lilist=document.querySelectorAll('h1') //gives all the h1 in form of node list 
+//but we can't change the lilist directly
+//so we need to use [ ] indexing to target an element 
+lilist[0].style.color="green"
+
+
+//storing the node list in a variable 
+const myh1=document.querySelectorAll('h1')//since page has only one h1 still we get a node list as a return type 
+myh1.forEach((h)=>{
+h.style.color="red"
+})
+
+
+//we can convert node list as well into an array 
+const liList=document.getElementsByClassName('list') //we get the htmlCollection as a return type in this 
+//forEach won't work here 
+
+//convert nodelist  html collection to an array 
+const listToArr=Array.from(liList) //now we have all the method of array are available with us 
+
+
+//for Each 
+listToArr.forEach((li)=>{
+    li.style.color="orange"
+    li.style.backgroundColor="red"
+    li.style.padding="green"
+    li.innerText="hello"
+})
+
+
+
+

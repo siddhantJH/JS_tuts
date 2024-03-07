@@ -2,32 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>learning</title> 
+    <!-- title will have a child named as text node -->
+    <style>
+        .bg_black{
+            background-color: #212121;
+            color:white;
+        }
+    </style>
 </head>
-<body>
-    <div class="parent">
-        <li class="day">Mon</li>
-        <li class="day">Tue</li>
-        <li class="day">Wed</li>
-        <li class="day">Thurs</li>
-        <li class="day">fri</li>
-    </div>
+<body class="bg_black">
+<div class="bg_black">
+    <h1 style="color:blue" id="title" class="heading">DOM learning on youtube</h1>
+    <!-- it will also have a text node and an attribute -->
+    <p>It is what it is</p>
+    <!-- p will have a child as text node  -->
+    <ul>
+        <li>One</li>
+        <li>Two</li>
+        <li>Three</li>
+    </ul>
+</div>
 </body>
-<script>
-    //now once this is created we can put it in a function and call it create a new div element for us based ont he argument we pass
-    
-    const h1=document.createElement('h1')
-    const div=document.createElement('div')
-    console.log(div) //here we get a div element could have creaetd h1 as well 
-    console.log(h1) //here we get h1 element 
-    div.id = Math.round(Math.random()*10+1)//can add id in the element like this 
-    div.setAttribute("title","generated title")  //can add title in the elmeent like this , this is mostly preferred half rtt
-    div.style.backgroundColor="green" //can add color back like this 
-    div.style.padding="12px" //can add the padding  like this 
-    // div.innerText="chai and code"
-    const addText=document.createTextNode("Chai Aur Code")
-    div.appendChild(addText)
-    document.body.appendChild(div)
-</script>
 </html>
