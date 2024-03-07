@@ -15,7 +15,7 @@ document.querySelector('ul').appendChild(newli)
 addNew('Flat')
 addNew('Trip to Europe')
 // addNew('Trip to japan')
-addNew('Get Married')
+addNew('Get Married ')
 
 
 
