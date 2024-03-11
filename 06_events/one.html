@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Html Event's</title>
+</head>
+<body>
+    <ul id="images">
+        <li><img width="200px" id="beach" src="https://images.pexels.com/photos/20347455/pexels-photo-20347455/free-photo-of-barceloneta.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt=""></li>
+        <li><img width="200px" id="manonwall" src="https://images.pexels.com/photos/20411472/pexels-photo-20411472/free-photo-of-a-building-with-a-statue-on-it-and-a-sign-that-says-the-best-of-the-city.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt=""></li>
+        <li><img width="200px" id="clock" src="https://images.pexels.com/photos/20309723/pexels-photo-20309723/free-photo-of-bergamo.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt=""></li>
+        <li><img width="200px" id="church" src="https://images.pexels.com/photos/5610999/pexels-photo-5610999.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt=""></li>
+    </ul>
+
+
+
+    
+</body>
+<script>
+    //All the events in javacript runs sequentially however there are some excetion
+    //but sometimes we want to ignore this sequential way of execution 
+    //like in asynchronous programming we divert some work to other function then it comes back after completetion 
+    //like wise there are events in browser also what this events do is these get involked in certain kind of activity like mouse keyboard etc
+    
+
+    //Approach 1 
+    //now if we want to provide the onclick functionlity in the list we can do that using onClick()
+    //but the problem with this approach is it is now feasible when you will scale the application 
+    //now second approach with it is 
+    // document.querySelector('#owl').onclick=function(){
+    //     alert('owl clicked') //now this is also not good approach beacuse there could be some problems
+    //     //with onclick rather we should use event listener and not onclick it gives us propogation ability not only onclick
+    //     // 
+    // }
+
+    //Approach 2 
+    //This event listener can listen to a lot of events 
+    //provide as an argument what event you are listening to   
+    //then provide a call back function
+    // document.getElementById('owl').addEventListener('click',function(e){
+    //     //whenever you want to work on event you get event object 
+    //     //these e contains events like browser and enviorments
+    //     //where mouse has clicked what was the coordinate position of the mouse
+    //     //time of click 
+    //     console.log(e)
+    // },false)  //false or true does'nt make any different only difference is eventBuffereign and eventCapturing 
+
+    //false is default  does't make any difference 
+    //client position 
+    //clientX, clientY,screenX,screenY
+    //altket,ctrl key,shift key,keycode 
+    //What all things to study  
+    //type : keyboard type events mouse type events.
+    //timestamp: 
+    //default prevented: stoping the default behavior
+    //target 
+    //toElement
+    //srcElement
+
+    //Appraoch 3
+    //attach events
+    //it is usedfull when internet explorer was there 
+
+
+
+
+    //Event's propogations  i)Event Capturing //but there are cases when we use it 
+                        // ii)Event Bubbling (default false)
+
+    
+    //part-1
+    document.querySelector(".images").addEventListener("click",function(){
+        console.log("clicked inside the ul")
+    },false)
+
+
+    //when we click on owl the top code is also activated 
+    //so first it will print click inside the church 
+    //and then ul gets cicked this is called 
+    //event propogation. inside ---->outside 
+    document.querySelector(".church").addEventListener("click",function(){
+        console.log("clicked inside the church")
+    },false) 
+    //if this was true  pehele ul click hoga fir church 
+    //top to bottom 
+    //inside ------->outside ::false capturing
+    //outside ------->inside :: true bubbling 
+
+
+    //if we want inner event to be seprate and if you want 
+    //it to not bubble up than you can use 
+    //stop propogation so call e.stopPropogation()
+    //event bubble hoke upar nai jaega 
+ 
+
+    document.getElementById('google').addEventListener('click',function(e){
+        e.preventDefault()    //stop default work 
+        e.stopPropagation()   //not bubbling
+        console.log("google clicked")
+    });
+</script>
+</html>
