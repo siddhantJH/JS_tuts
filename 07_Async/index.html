@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code</title>
+</head>
+<body>
+    <h1>Chai aur code</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+// setTimeout(function(){ //only executes one time 
+//     console.log("Siddhant")
+// },2000) //this is a method which internally calls an API
+//         //if you want to verify open window console and call the 
+        //examine the windows object , this is provided through browser API event queue se wapas access milta hai  
+
+//it takes handler: it is a call back function which does not have a name , we give number
+
+// setInterval() //takes break  and keep on executing in a equal interval
+
+
+const saySidhant=function(){
+    console.log("hello")
+}
+const changeText=function(){
+    document.querySelector("h1").innerHTML="best JS series"
+
+}
+//change the text after two second 
+const changeSpeak=setTimeout(saySidhant,2000) //only give reference as an handler 
+const changeTe=setTimeout(changeText,2000) 
+
+
+//how to stop the change and set timeout if it does not happen within the stipulated time 
+// clearTimeout(changeTe) //it takes reference aap kaun se wale set time out ko hatan achahte hai
+//once we pass it the change Speak it stops the change 
+//and it does do anything not usefull
+//so use it in an event and not here
+
+
+document.querySelector('#stop').addEventListener('click',function(){
+    clearTimeout(changeTe)
+    console.log('STOPPED') //if we click before two secodn the even is stopped 
+
+})
+</script>
+</html>
