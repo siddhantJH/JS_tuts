@@ -1,4 +1,5 @@
 //Destructuring of an object 
+//destructufin means extracting properties and bind them to a variable 
 const course={
     coursename:"Js in hindi"
     ,price:"999",
