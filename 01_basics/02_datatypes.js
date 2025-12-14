@@ -1,7 +1,7 @@
 //make notes only using the notes in the programme 
 
 "use strict";    //treat all js code as newer version 
-// alert(3+3)   //gives error as it all in a nodejs , so there is diff syntax to use it in js
+// alert(3+3)   //gives error as it all in a nodejs , so there is diff syntax to use it in js, runs in dom in browser
 console.log(3+3) ; console.log("Hitesh")  //will run but it is not good way to write a code write in different line 
 let name = "hitesh"  //string datatype
 let age = 18       //int datatype
@@ -11,13 +11,15 @@ let isLoggedIn =false   //boolean datatype
 //bigint
 //string =>""
 //boolean = >true/false
-//null     : This is a standalone value in javascript 
+//null     : This is a standalone value in javascript (object type)
 //undefined : It means value is not defined, and null is representation of empty value 
-//symbol : It is used to uniqly identify 
+//symbol : It is used to uniqly identify a value
 //object : 
 
-
+let num;
+//typeof can also be used as function
 console.log(typeof "hitesh")
 console.log(typeof 19)
 console.log(typeof null)  //gives us type as object (null is object type in js)
 console.log(typeof undefined)  //will give undefined only
+console.log(typeof num)   //value is also undefined and its type is also undefined

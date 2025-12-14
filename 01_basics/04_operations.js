@@ -2,13 +2,13 @@
 
 let value = 3
 let negVal=-value
-// console.log(negVal)
+console.log(negVal)
 
 console.log(2+2)
 console.log(2-2)
 console.log(2*2)
 console.log(2**2)
-console.log(2/3)
+console.log(2/3) //It gives floating type value
 console.log(2%3)
 
 
@@ -22,7 +22,7 @@ console.log(str3)
 console.log(1+"2") //12
 console.log("1"+2) //12
 console.log("1"+"2") //12
-console.log("1"+2+2) //122
+console.log("1"+2+2) //122 javascrit follow left to right precedence, javascript has a rules which (prefferedType depends kaun si vaue pehele aa rahi hai)
 console.log(1+2+"2") // 32
 console.log(3*3%4/6)
 

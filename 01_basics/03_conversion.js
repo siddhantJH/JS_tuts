@@ -23,8 +23,11 @@ let isLoggedIn=1
 let booleanIsLoggedIn=Boolean(isLoggedIn)    
 console.log(booleanIsLoggedIn)   //gives us true , if we convert empty string it gives false, if we convert string we get true
 
-// 1 ==>true
+//1 ==>true
 //"" ==>false
 //"rohan" => true
 
 
+let num=33
+let strnum=String(num)
+console.log(typeof strnum)
